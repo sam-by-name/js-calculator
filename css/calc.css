@@ -1,3 +1,33 @@
 body {
-background-color: blue;
+background-color: white;
+}
+.calc {
+  height : 400px !important;
+  width  : 600px !important;
+}
+
+.display {
+
+}
+
+.firstRow {
+
+}
+.clearBtn {
+    
+}
+.delBtn {
+  /*background :url('../images/backOne.png') !important;*/
+
+}
+.secondRow {
+
+}
+
+.thirdRow {
+
+}
+
+.forthRow {
+
 }
