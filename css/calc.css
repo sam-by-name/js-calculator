@@ -1,13 +1,18 @@
 body {
 background-color: white;
 }
-
+h3 {
+  color:red;
+  text-align: center;
+  padding-right: 30px;
+}
 .calc {
   height : 400px !important;
   width  : 600px !important;
   margin-top: 100px !important;
-  padding : 50px 0px 500px 20px !important;
-  
+  padding : 60px 0px 600px 20px !important;
+  border-radius : 7%;
+  background-color: lightgrey;
   border : 1px solid black;
 
 }
@@ -18,21 +23,25 @@ button {
   padding  : 2px 0 !important;
   color    : blue !important;
   font-size: 2em !important;
+  border-radius : 5% !important;
+  background-color: white !important;
 }
 
 .columns {
   margin   : 0 5px 0 10px !important;
-
 }
 
 .display {
-  width: 92%;
-
+  width: 93%;
 }
 
 .firstRow {
   position:center;
-
+}
+.inputBar {
+  height : 80px !important;
+  font-size : 2em;
+  text-align: right;
 }
 .clearBtn {
 
