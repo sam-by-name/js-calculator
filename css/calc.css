@@ -5,16 +5,27 @@ background-color: white;
   height : 400px !important;
   width  : 600px !important;
 }
+button {
+  position : relative !important;
+  height   : 60px !important;
+  width    : 90px !important;
+}
+.columns {
+  position : relative;
+  margin-left : 0 !important;
+}
 
 .display {
+  width: 100%;
 
 }
 
 .firstRow {
+  position:center;
 
 }
 .clearBtn {
-    
+
 }
 .delBtn {
   /*background :url('../images/backOne.png') !important;*/
