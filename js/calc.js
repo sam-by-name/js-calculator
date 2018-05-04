@@ -17,10 +17,14 @@ function delOne() {
 
 function equals() {
   let current = document.getElementById("amount").value; // need to make work
-  let number = current*1; 
-  alert(number);
-  let answer = Math.abs(number);
-  document.getElementById("amount").value = answer;
+  let mathArray = current.split('');
+  let arrVar = "";
+  for (let i = 0; i < mathArray.length; i++) {
+    arrVar = mathArray[i];
+  }
+
+  alert(arrVar);
+  //document.getElementById("amount").value = answer;
 }
 
 /////////////// Math operators Below ///////////////

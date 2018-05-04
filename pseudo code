@@ -13,16 +13,15 @@ gets assigned to which temporary variable.
 
 
 
-function equals() {
-  let current = document.getElementById("amount").value; // need to make work
-  let number = current*1; 
-  let number = Math.abs(current);
-  document.getElementById("amount").value = answer;
-}
+if value is not a number or a decimal point
+temp plus equals "value"
 
 
-function delOne() {
-  let current = document.getElementById("amount").value;  
-  let newCurrent = current.slice(0, -1);
-  document.getElementById("amount").value = newCurrent;
-}
+
+
+equals takes a string and returns the result to the equation inside
+
+equals takes string and turns to and array to preserve order
+separate by math operators
+loop through array to print index's in order to a variable
+let JS do the math and print variable back to calc display
