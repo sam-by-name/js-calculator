@@ -5,32 +5,42 @@
 //}
 
 function reset() {
-  document.getElementById("amount").value = '';
+  document.getElementById("amount").value = ''; 
 }
 function delOne() {
-  document.getElementById("amount").value = 0;
+  let current = document.getElementById("amount").value;   // not yet working
+  //current =;
 }
-function divide() {
 
+///////////////////////////////////////////////////////
+
+function divide() {
+  document.getElementById("amount").value += '/';
 }
 function multiply() {
-
+  document.getElementById("amount").value += '*';
 }
 function minus() {
-
+  document.getElementById("amount").value += '-';
 }
 function plus() {
-
-}
-function equals() {
-
+  document.getElementById("amount").value += '+';
 }
 function percent() {
-
+  document.getElementById("amount").value += '%';
 }
 function decimal() {
-
+  document.getElementById("amount").value += '.';
 }
+
+//////////////// Equals ///////////////////////////
+
+function equals() {
+  document.getElementById("amount").value; // need to make work
+}
+
+//////////////// NUMBERS BELOW ////////////////////
+
 function one () {
   document.getElementById("amount").value += 1;
 }
