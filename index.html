@@ -6,7 +6,6 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/calc.css" />
-    <script src="./js/calc.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
 </head>
@@ -20,74 +19,72 @@
     </div>
     <div class="row firstRow">
       <div class="three columns">
-        <button class="clearBtn">AC</button>
+        <button class="clearBtn" onclick="clear()">AC</button>
       </div>
       <div class="three columns">
-        <button class="delBtn">CE</button>
+        <button class="delBtn" onclick="delOne()">CE</button>
       </div>
       <div class="three columns">
-        <button>/</button>
+        <button onclick="divide()">/</button>
       </div>
       <div class="three columns">
-        <button class="multi">*</button>
+        <button class="multi" onclick="multiply()">*</button>
       </div>
     </div>
     <div class="row secondRow">
       <div class="three columns">
-        <button>7</button>
+        <button onclick="numbers">7</button>
       </div>
       <div class="three columns">
-        <button>8</button>
+        <button onclick="numbers">8</button>
       </div>
       <div class="three columns">
-        <button>9</button>
+        <button onclick="numbers">9</button>
       </div>
       <div class="three columns">
-        <button>-</button>
+        <button onclick="minus()">-</button>
       </div>
     </div>
     <div class="row thirdRow">
       <div class="three columns">
-        <button>4</button>
+        <button onclick="numbers">4</button>
       </div>
       <div class="three columns">
-        <button>5</button>
+        <button onclick="numbers">5</button>
       </div>
       <div class="three columns">
-        <button>6</button>
+        <button onclick="numbers">6</button>
       </div>
       <div class="three columns">
-        <button>+</button>
+        <button onclick="plus()">+</button>
       </div>
     </div>
     <div class="row forthRow">
       <div class="three columns">
-        <button>1</button>
+        <button onclick="numbers">1</button>
       </div>
       <div class="three columns">
-        <button>2</button>
+        <button onclick="numbers">2</button>
       </div>
       <div class="three columns">
-        <button>3</button>
+        <button onclick="numbers">3</button>
       </div>
       <div class="three columns">
-        <button class="equals">=</button>
+        <button class="equals" onclick="equals()">=</button>
       </div>
     </div>
     <div class="row fifthRow">
       <div class="three columns">
-        <button>%</button>
+        <button onclick="percent()">%</button>
       </div>
       <div class="three columns">
-        <button>0</button>
+        <button onclick="numbers">0</button>
       </div>
       <div class="three columns">
-        <button>.</button>
+        <button onclick="decimal()">.</button>
       </div>
-      <!--<div class="three columns">
-        <button class="equalsBot">=</button>
-      </div>-->
     </div>          
   </div>
+  <script src="./js/calc.js"></script>
 </body>
 </html>
