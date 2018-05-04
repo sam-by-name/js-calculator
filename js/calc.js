@@ -8,12 +8,22 @@ function reset() {
   document.getElementById("amount").value = ''; 
 }
 function delOne() {
-  let current = document.getElementById("amount").value;   // not yet working
+  let current = document.getElementById("amount").value;  
   let newCurrent = current.slice(0, -1);
   document.getElementById("amount").value = newCurrent;
 }
 
-///////////////////////////////////////////////////////
+//////////////// Equals ///////////////////////////
+
+function equals() {
+  let current = document.getElementById("amount").value; // need to make work
+  let number = current*1; 
+  alert(number);
+  let answer = Math.abs(number);
+  document.getElementById("amount").value = answer;
+}
+
+/////////////// Math operators Below ///////////////
 
 function divide() {
   document.getElementById("amount").value += '/';
@@ -34,11 +44,6 @@ function decimal() {
   document.getElementById("amount").value += '.';
 }
 
-//////////////// Equals ///////////////////////////
-
-function equals() {
-  document.getElementById("amount").value; // need to make work
-}
 
 //////////////// NUMBERS BELOW ////////////////////
 

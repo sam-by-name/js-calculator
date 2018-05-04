@@ -1,0 +1,28 @@
+my reverse pseudo code
+
+first thoughts :
+"Aaaahhhhhhhhhhhhhhhh!!! what's going on?"
+
+closer inspection:
+
+declare empty variables
+
+when a button is clicked a function is triggered.
+sequence of if/if else statements determining what integer 
+gets assigned to which temporary variable.
+
+
+
+function equals() {
+  let current = document.getElementById("amount").value; // need to make work
+  let number = current*1; 
+  let number = Math.abs(current);
+  document.getElementById("amount").value = answer;
+}
+
+
+function delOne() {
+  let current = document.getElementById("amount").value;  
+  let newCurrent = current.slice(0, -1);
+  document.getElementById("amount").value = newCurrent;
+}
