@@ -41,6 +41,9 @@ button:active {
 
 .display {
   width: 93%;
+  height : 80px !important;
+  font-size : 2em;
+  text-align: right;
 }
 
 .firstRow button {
@@ -51,9 +54,7 @@ button:active {
   background-color: rgb(185, 179, 179) !important;
 }
 .inputBar {
-  height : 80px !important;
-  font-size : 2em;
-  text-align: right;
+
 }
 /*.clearBtn {
   background-color: red !important;
