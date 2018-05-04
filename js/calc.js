@@ -9,7 +9,8 @@ function reset() {
 }
 function delOne() {
   let current = document.getElementById("amount").value;   // not yet working
-  //current =;
+  let newCurrent = current.slice(0, -1);
+  document.getElementById("amount").value = newCurrent;
 }
 
 ///////////////////////////////////////////////////////
