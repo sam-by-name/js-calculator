@@ -16,69 +16,27 @@ function delOne() {
 //////////////// Equals ///////////////////////////
 
 function equals() {
-  let current = document.getElementById("amount").value; // need to make work
-  let mathArray = current.split('');
-  let arrVar = "";
-  for (let i = 0; i < mathArray.length; i++) {
-    arrVar = mathArray[i];
-  }
+  let current = [];
+  current = tempNum; // store all calc input to current
+  let mathArr = current.split('');       // mathArr turns current into a split array
+  let arrVar =[];
+  for (let i = 0; i < mathArr.length; i++) {
+    if (mathArr[i] == 1||2||3||4||5||6||7||8||9||0){
+    arrVar += mathArr[i];
 
-  alert(arrVar);
+  }}
+  alert(current);
   //document.getElementById("amount").value = answer;
 }
 
-/////////////// Math operators Below ///////////////
+////////////// CALCULATOR BUTTONS BELOW ////////////////////
 
-function divide() {
-  document.getElementById("amount").value += '/';
-}
-function multiply() {
-  document.getElementById("amount").value += '*';
-}
-function minus() {
-  document.getElementById("amount").value += '-';
-}
-function plus() {
-  document.getElementById("amount").value += '+';
-}
-function percent() {
-  document.getElementById("amount").value += '%';
-}
-function decimal() {
-  document.getElementById("amount").value += '.';
+function calcBtns (a) {
+  tempNum = document.getElementById("amount").value += a;
 }
 
-
-//////////////// NUMBERS BELOW ////////////////////
-
-function one () {
-  document.getElementById("amount").value += 1;
-}
-function two () {
-  document.getElementById("amount").value += 2;
-}
-function three () {
-  document.getElementById("amount").value += 3;
-}
-function four () {
-  document.getElementById("amount").value += 4;
-}
-function five () {
-  document.getElementById("amount").value += 5;
-}
-function six () {
-  document.getElementById("amount").value += 6;
-}
-function seven () {
-  document.getElementById("amount").value += 7;
-}
-function eight () {
-  document.getElementById("amount").value += 8;
-}
-function nine () {
-  document.getElementById("amount").value += 9;
-}
-function zero () {
-  document.getElementById("amount").value += 0;
+function opBtns (a) {
+  tempOp = document.getElementById('amount').value += a;
 }
 
+let tempNum;

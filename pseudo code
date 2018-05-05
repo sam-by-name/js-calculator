@@ -19,7 +19,7 @@ temp plus equals "value"
 
 
 
-equals takes a string and returns the result to the equation inside
+equals takes a string and returns the equation inside to the calc display.
 
 equals takes string and turns to and array to preserve order
 separate by math operators
