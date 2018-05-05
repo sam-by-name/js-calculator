@@ -40,23 +40,48 @@ function percentageBtn (a) {                                    // operator butt
 
 //////////////// Equals ///////////////////////////
 
-function equals() { 
-  let mathArr = tempNum.split(' ');
-  let joined = mathArr.join(' ');       // mathArr turns current into a split array
-  let pt1 = mathArr[0]+=mathArr[1]+=mathArr[2];
-  let pt2 = mathArr[3]+=mathArr[4];
+function equals() {
+  let pt1;  
+  let z = tempNum.split(' ');
+  let z1 = z[1];  
+  let z2 = z[3];
+  let z3 = z[5];
+  let z4 = z[7];
+  let z5 = z[9];
+
+  let y = z.map(Number); 
+  let a1 = y[0];
+  let a2 = y[2];
+  let a3 = y[4];
+  let a4 = y[6];
+  let a5 = y[8];
+  let a6 = y[10];
+
+  if        (z1 == '+') {pt1 = a1 + a2;} 
+    else if (z1 == '*') {pt1 = a1 * a2;} 
+    else if (z1 == '-') {pt1 = a1 - a2;} 
+    else if (z1 == '/') {pt1 = a1 / a2;}
+
+  if        (z2 == '+') {pt2 = pt1 + a3;} 
+    else if (z2 == '*') {pt2 = pt1 * a3;} 
+    else if (z2 == '-') {pt2 = pt1 - a3;} 
+    else if (z2 == '/') {pt2 = pt1 / a3;}
+
+  if        (z3 == '+') {pt3 = pt2 + a4;} 
+    else if (z3 == '*') {pt3 = pt2 * a4;} 
+    else if (z3 == '-') {pt3 = pt2 - a4;} 
+    else if (z3 == '/') {pt3 = pt2 / a4;}
+
+  if        (z4 == '+') {pt4 = pt3 + a5;} 
+    else if (z4 == '*') {pt4 = pt3 * a5;} 
+    else if (z4 == '-') {pt4 = pt3 - a5;} 
+    else if (z4 == '/') {pt4 = pt3 / a5;}
   
+  if        (z5 == '+') {pt5 = pt4 + a6;} 
+    else if (z5 == '*') {pt5 = pt4 * a6;} 
+    else if (z5 == '-') {pt5 = pt4 - a6;} 
+    else if (z5 == '/') {pt5 = pt4 / a6;}
 
-//  for (let i = 0; i < mathArr.length; i++) {
-//   // if (mathArr[i] ==  ){
-//    arrVar += mathArr[i];
-//
-//  }
-
-  alert(joined);
-
-
-
-  //document.getElementById("amount").value = answer;
+  alert(pt5);
 }
 
