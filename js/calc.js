@@ -1,7 +1,5 @@
 let tempNum;
 let current;
-//let tempTot;
-
 
 ////////////// CALCULATOR BUTTONS BELOW ////////////////////
 
@@ -19,16 +17,7 @@ function calcBtns (a) {                                    // num buttons functi
   tempNum = document.getElementById("amount").value += (a);
 }
 
-function plusBtn (a) {                                    // operator buttons function
-  tempNum = document.getElementById('amount').value += ' ' + a + ' ';
-}
-function minusBtn (a) {                                    // operator buttons function
-  tempNum = document.getElementById('amount').value += ' ' + a + ' ';
-}
-function timesBtn (a) {                                    // operator buttons function
-  tempNum = document.getElementById('amount').value += ' ' + a + ' ';
-}
-function divideBtn (a) {                                    // operator buttons function
+function opBtns (a) {                                    // operator buttons function
   tempNum = document.getElementById('amount').value += ' ' + a + ' ';
 }
 function decimalBtn (a) {                                    // operator buttons function
@@ -41,7 +30,8 @@ function percentageBtn (a) {                                    // operator butt
 //////////////// Equals ///////////////////////////
 
 function equals() {
-  let pt1;  
+  let pt1;
+  let ans;  
   let z = tempNum.split(' ');
   let z1 = z[1];  
   let z2 = z[3];
@@ -57,31 +47,27 @@ function equals() {
   let a5 = y[8];
   let a6 = y[10];
 
-  if        (z1 == '+') {pt1 = a1 + a2;} 
-    else if (z1 == '*') {pt1 = a1 * a2;} 
-    else if (z1 == '-') {pt1 = a1 - a2;} 
-    else if (z1 == '/') {pt1 = a1 / a2;}
+  if        (z1 == '+') {ans = a1 + a2;} 
+    else if (z1 == '*') {ans = a1 * a2;} 
+    else if (z1 == '-') {ans = a1 - a2;} 
+    else if (z1 == '/') {ans = a1 / a2;}
+  if        (z2 == '+') {ans = ans + a3;} 
+    else if (z2 == '*') {ans = ans * a3;} 
+    else if (z2 == '-') {ans = ans - a3;} 
+    else if (z2 == '/') {ans = ans / a3;}
+  if        (z3 == '+') {ans = ans + a4;} 
+    else if (z3 == '*') {ans = ans * a4;} 
+    else if (z3 == '-') {ans = ans - a4;} 
+    else if (z3 == '/') {ans = ans / a4;}
+  if        (z4 == '+') {ans = ans + a5;} 
+    else if (z4 == '*') {ans = ans * a5;} 
+    else if (z4 == '-') {ans = ans - a5;} 
+    else if (z4 == '/') {ans = ans / a5;}  
+  if        (z5 == '+') {ans = ans + a6y;} 
+    else if (z5 == '*') {ans = ans * a6y;} 
+    else if (z5 == '-') {ans = ans - a6y;} 
+    else if (z5 == '/') {ans = ans / a6y;}
 
-  if        (z2 == '+') {pt2 = pt1 + a3;} 
-    else if (z2 == '*') {pt2 = pt1 * a3;} 
-    else if (z2 == '-') {pt2 = pt1 - a3;} 
-    else if (z2 == '/') {pt2 = pt1 / a3;}
-
-  if        (z3 == '+') {pt3 = pt2 + a4;} 
-    else if (z3 == '*') {pt3 = pt2 * a4;} 
-    else if (z3 == '-') {pt3 = pt2 - a4;} 
-    else if (z3 == '/') {pt3 = pt2 / a4;}
-
-  if        (z4 == '+') {pt4 = pt3 + a5;} 
-    else if (z4 == '*') {pt4 = pt3 * a5;} 
-    else if (z4 == '-') {pt4 = pt3 - a5;} 
-    else if (z4 == '/') {pt4 = pt3 / a5;}
-  
-  if        (z5 == '+') {pt5 = pt4 + a6;} 
-    else if (z5 == '*') {pt5 = pt4 * a6;} 
-    else if (z5 == '-') {pt5 = pt4 - a6;} 
-    else if (z5 == '/') {pt5 = pt4 / a6;}
-
-  alert(pt5);
+  alert(ans);
 }
 
