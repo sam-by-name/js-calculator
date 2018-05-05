@@ -63,10 +63,10 @@ function equals() {
     else if (z4 == '*') {ans = ans * a5;} 
     else if (z4 == '-') {ans = ans - a5;} 
     else if (z4 == '/') {ans = ans / a5;}  
-  if        (z5 == '+') {ans = ans + a6y;} 
-    else if (z5 == '*') {ans = ans * a6y;} 
-    else if (z5 == '-') {ans = ans - a6y;} 
-    else if (z5 == '/') {ans = ans / a6y;}
+  if        (z5 == '+') {ans = ans + a6;} 
+    else if (z5 == '*') {ans = ans * a6;} 
+    else if (z5 == '-') {ans = ans - a6;} 
+    else if (z5 == '/') {ans = ans / a6;}
 
   alert(ans);
 }
