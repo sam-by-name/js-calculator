@@ -1,50 +1,73 @@
-let tempNum = [];
+let tempNum = '';
+let tempOp = '';
+let z = [];
+let ans = 0;  
+let y = [];
 
 ////////////// CALCULATOR BUTTONS BELOW ////////////////////
 
 function reset() {                                         // AC button function
   document.getElementById("amount").value = '';
-  tempNum = ''; 
+  tempNum = '';
+  tempOp = '';
+  z = []; 
+  ans = 0;
+  y = [];
 }
 
 function delOne() {                                        // CE button function
-  tempNum = tempNum.slice(0, -1);
-  document.getElementById("amount").value = tempNum;
+  tempDisp = getElementById('amount').value;
+  tempDisp.slice(0, -1);
+  document.getElementById('amount').value = tempDisp;     // is now broke //////////
 }
 
-function calcBtns (a) {                                    // num buttons function
-  tempNum = document.getElementById("amount").value += (a);
+//////////////////////////////////////
+
+function numBtns (a) {                                    // num buttons function
+  tempNum += a; 
+  document.getElementById("amount").value += (a);
 }
 
-function opBtns (a) {                                    // operator buttons function
-  tempNum = document.getElementById('amount').value += ' ' + a + ' ';
+function minusBtn (a) {                  // operator buttons function
+  if (tempNum == '') {                  // if tempNum is empty 
+    (tempNum = a) && (document.getElementById('amount').value += a);  // tempNum now holds '-'
+  } else { opBtns ('-');
+  }     
 }
-function minusBtn (a) {                                    // operator buttons function
-  tempNum = document.getElementById('amount').value += ' ' + a + ' ';
+
+function opBtns (a) {                    // operator buttons function
+  tempOp = a;
+  z.push(tempNum);                // tempNum is pushed to sumArr
+  z.push(tempOp);                 // tempOp is pushed to sumArr
+  tempNum = '';                         // tempOp reset
+  tempOp = '';                         // tempNum reset
+  document.getElementById('amount').value += a;
 }
+
 function decimalBtn (a) {                                    // operator buttons function
-  tempNum = document.getElementById('amount').value += a;
+  tempNum += '.';
+  document.getElementById('amount').value += a;
 }
 function percentageBtn (a) {                                    // operator buttons function
-  tempNum = document.getElementById('amount').value += a + ' ';
+  tempNum += '%';
+  document.getElementById('amount').value += a + ' ';
 }
 
 //////////////// Equals ///////////////////////////
 
 function equals() {
-  let ans;  
-  let z = tempNum.split(' ');
-  let x = z;
+  z.push(tempNum);    // make tempNum push to sumArr outside of here
   
+  
+  // operators below
   let z1 = z[1];  
   let z2 = z[3];
   let z3 = z[5];
   let z4 = z[7];
-  let z5 = z[9];
-
-  let y = z.map(Number); 
-  
-  
+  let z5 = z[9];  
+                        // find a way to reset these z's and a's
+  y  = z.map(Number);
+  // numbers below
   let a1 = y[0];
   let a2 = y[2];
   let a3 = y[4];
@@ -56,6 +79,7 @@ function equals() {
     else if (z1 == '*') {ans = a1 * a2;} 
     else if (z1 == '-') {ans = a1 - a2;} 
     else if (z1 == '/') {ans = a1 / a2;}
+    
   if        (z2 == '+') {ans = ans + a3;} 
     else if (z2 == '*') {ans = ans * a3;} 
     else if (z2 == '-') {ans = ans - a3;} 
@@ -73,7 +97,7 @@ function equals() {
     else if (z5 == '-') {ans = ans - a6;} 
     else if (z5 == '/') {ans = ans / a6;}
   
-  alert(ans);
+alert(ans);
 }
 
 /*
@@ -82,8 +106,7 @@ function start
 if its a number store in first index
 if its not push to array
 if minus and last index an operator, next number is a negative number
-else push minus to next index 
+else push minus to next index */
 
 
 
-*/
