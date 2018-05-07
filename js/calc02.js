@@ -3,6 +3,7 @@ let tempOp = '';
 let z = [];
 let ans = 0;  
 let y = [];
+var x = document.getElementById('amount').value; //doesn't work
 
 ////////////// CALCULATOR BUTTONS BELOW ////////////////////
 
@@ -17,7 +18,8 @@ function reset() {                                         // AC button function
 
 function delOne() {                                        // CE button function
   tempDisp = getElementById('amount').value;
-  tempDisp.slice(0, -1);
+  newDisp = tempDisp.split('');
+  newDisp.slice(0, -1);
   document.getElementById('amount').value = tempDisp;     // is now broke //////////
 }
 
@@ -25,30 +27,30 @@ function delOne() {                                        // CE button function
 
 function numBtns (a) {                                    // num buttons function
   tempNum += a; 
-  document.getElementById("amount").value += (a);
-}
+  document.getElementById('amount').value += (a);
+}   
 
-function minusBtn (a) {                  // operator buttons function
+function minusBtn (a) {                 // operator buttons function
   if (tempNum == '') {                  // if tempNum is empty 
     (tempNum = a) && (document.getElementById('amount').value += a);  // tempNum now holds '-'
   } else { opBtns ('-');
   }     
 }
 
-function opBtns (a) {                    // operator buttons function
+function opBtns (a) {                   // operator buttons function
   tempOp = a;
-  z.push(tempNum);                // tempNum is pushed to sumArr
-  z.push(tempOp);                 // tempOp is pushed to sumArr
+  z.push(tempNum);                      // tempNum is pushed to sumArr
+  z.push(tempOp);                       // tempOp is pushed to sumArr
   tempNum = '';                         // tempOp reset
-  tempOp = '';                         // tempNum reset
+  tempOp = '';                          // tempNum reset
   document.getElementById('amount').value += a;
 }
 
-function decimalBtn (a) {                                    // operator buttons function
+function decimalBtn (a) {                             // operator buttons function
   tempNum += '.';
   document.getElementById('amount').value += a;
 }
-function percentageBtn (a) {                                    // operator buttons function
+function percentageBtn (a) {                          // operator buttons function
   tempNum += '%';
   document.getElementById('amount').value += a + ' ';
 }
@@ -78,8 +80,7 @@ function equals() {
   if        (z1 == '+') {ans = a1 + a2;} 
     else if (z1 == '*') {ans = a1 * a2;} 
     else if (z1 == '-') {ans = a1 - a2;} 
-    else if (z1 == '/') {ans = a1 / a2;}
-    
+    else if (z1 == '/') {ans = a1 / a2;}  
   if        (z2 == '+') {ans = ans + a3;} 
     else if (z2 == '*') {ans = ans * a3;} 
     else if (z2 == '-') {ans = ans - a3;} 
@@ -96,8 +97,8 @@ function equals() {
     else if (z5 == '*') {ans = ans * a6;} 
     else if (z5 == '-') {ans = ans - a6;} 
     else if (z5 == '/') {ans = ans / a6;}
-  
-alert(ans);
+  alert(ans);
+document.getElementById("amount").value = ans;
 }
 
 /*
