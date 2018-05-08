@@ -1,26 +1,25 @@
-let tempNum = '';
-let tempOp = '';
-let z = [];
-let ans = 0;  
-let y = [];
-//let x = document.getElementById('amount').value; //doesn't work
+let tempNum = '';   //  holds temp number
+let z = [];         //  holds string/numbers/ math operators in order
+let ans = 0;        //  Holds answer
+let y = [];         //  Holds numbers once they have been converted from strings
 
 ////////////// CALCULATOR BUTTONS BELOW ////////////////////
 
 function reset() {                                   // AC button function
   document.getElementById("amount").value = '';
   tempNum = '';
-  tempOp = '';
   z = []; 
   ans = 0;
   y = [];
 }
 
 function delOne() {                                  // CE button function
-  tempDisp = document.getElementById('amount').value;
-  newDisp = tempDisp.slice(0, -1);
+  let tempDisp = document.getElementById('amount').value;
+  let newDisp = tempDisp.slice(0, -1);
+  if (tempNum !== '') {
+    tempNum = tempNum.slice(0, -1);
+  } else { z = z.slice(0, -1)};              // currently removes whole index instead of just last digit of most recent
   document.getElementById('amount').value = newDisp;
- 
 }
 
 //////////////////////////////////////
@@ -38,11 +37,11 @@ function minusBtn (a) {                              // operator buttons functio
 }
 
 function opBtns (a) {                                // operator buttons function
-  tempOp = a;
-  z.push(tempNum);                                   // tempNum is pushed to sumArr
-  z.push(tempOp);                                    // tempOp is pushed to sumArr
+  if (tempNum !== '') {
+  z.push(tempNum)
+  }                                   // tempNum is pushed to sumArr
+  z.push(a);                                    // tempOp is pushed to sumArr
   tempNum = '';                                      // tempOp reset
-  tempOp = '';                                       // tempNum reset
   document.getElementById('amount').value += a;
 }
 
@@ -52,55 +51,41 @@ function decimalBtn (a) {                            // operator buttons functio
 }
 function percentageBtn (a) {                         // operator buttons function
   tempNum = tempNum / 100;
-  document.getElementById('amount').value += a + ' ';
+  document.getElementById('amount').value += a;
 }
 
 
 //////////////// Equals ///////////////////////////
 
 function equals() {
-  z.push(tempNum);                                   // make tempNum push to sumArr outside of here
+  z.push(tempNum);                                   // make tempNum push to sumArr outside of here                                            
+  y = z;
+  y = y.map(Number);
 
-  // operators below
-  let z1 = z[1];  
-  let z2 = z[3];
-  let z3 = z[5];
-  let z4 = z[7];
-  let z5 = z[9];                                    // find a way to reset these z's and a's
-                                                    
-  y  = z.map(Number);
-  // numbers below
-  let a1 = y[0];
-  let a2 = y[2];
-  let a3 = y[4];
-  let a4 = y[6];
-  let a5 = y[8];
-  let a6 = y[10];
-
-  if        (z1 == '+') {ans = a1 + a2;} 
-    else if (z1 == '×') {ans = a1 * a2;} 
-    else if (z1 == '-') {ans = a1 - a2;} 
-    else if (z1 == '÷') {ans = a1 / a2;}
-
-  if        (z2 == '+') {ans = ans + a3;} 
-    else if (z2 == '×') {ans = ans * a3;} 
-    else if (z2 == '-') {ans = ans - a3;} 
-    else if (z2 == '÷') {ans = ans / a3;}
-  if        (z3 == '+') {ans = ans + a4;} 
-    else if (z3 == '*') {ans = ans * a4;} 
-    else if (z3 == '-') {ans = ans - a4;} 
-    else if (z3 == '÷') {ans = ans / a4;}
-  if        (z4 == '+') {ans = ans + a5;} 
-    else if (z4 == '×') {ans = ans * a5;} 
-    else if (z4 == '-') {ans = ans - a5;} 
-    else if (z4 == '÷') {ans = ans / a5;}  
-  if        (z5 == '+') {ans = ans + a6;} 
-    else if (z5 == '×') {ans = ans * a6;} 
-    else if (z5 == '-') {ans = ans - a6;} 
-    else if (z5 == '÷') {ans = ans / a6;}
+  if        (z[1] == '+') {ans = y[0] + y[2];} 
+    else if (z[1] == '×') {ans = y[0] * y[2];} 
+    else if (z[1] == '-') {ans = y[0] - y[2];} 
+    else if (z[1] == '÷') {ans = y[0] / y[2];}
+  if        (z[3] == '+') {ans = ans  + y[4];} 
+    else if (z[3] == '×') {ans = ans  * y[4];} 
+    else if (z[3] == '-') {ans = ans  - y[4];} 
+    else if (z[3] == '÷') {ans = ans  / y[4];}
+  if        (z[5] == '+') {ans = ans  + y[6];} 
+    else if (z[5] == '×') {ans = ans  * y[6];} 
+    else if (z[5] == '-') {ans = ans  - y[6];} 
+    else if (z[5] == '÷') {ans = ans  / y[6];}
+  if        (z[7] == '+') {ans = ans  + y[8];} 
+    else if (z[7] == '×') {ans = ans  * y[8];} 
+    else if (z[7] == '-') {ans = ans  - y[8];} 
+    else if (z[7] == '÷') {ans = ans  / y[8];}  
+  if        (z[9] == '+') {ans = ans  + y[10];} 
+    else if (z[9] == '×') {ans = ans  * y[10];} 
+    else if (z[9] == '-') {ans = ans  - y[10];} 
+    else if (z[9] == '÷') {ans = ans  / y[10];}
  
 document.getElementById("amount").value = ans;
-
+z = [];
+tempNum = ans;
 }
 
 /*
