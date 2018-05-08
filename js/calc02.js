@@ -51,9 +51,10 @@ function decimalBtn (a) {                            // operator buttons functio
   document.getElementById('amount').value += a;
 }
 function percentageBtn (a) {                         // operator buttons function
-  tempNum += '%';
+  tempNum = tempNum / 100;
   document.getElementById('amount').value += a + ' ';
 }
+
 
 //////////////// Equals ///////////////////////////
 
@@ -79,7 +80,8 @@ function equals() {
   if        (z1 == '+') {ans = a1 + a2;} 
     else if (z1 == '×') {ans = a1 * a2;} 
     else if (z1 == '-') {ans = a1 - a2;} 
-    else if (z1 == '÷') {ans = a1 / a2;}  
+    else if (z1 == '÷') {ans = a1 / a2;}
+
   if        (z2 == '+') {ans = ans + a3;} 
     else if (z2 == '×') {ans = ans * a3;} 
     else if (z2 == '-') {ans = ans - a3;} 
@@ -96,7 +98,9 @@ function equals() {
     else if (z5 == '×') {ans = ans * a6;} 
     else if (z5 == '-') {ans = ans - a6;} 
     else if (z5 == '÷') {ans = ans / a6;}
+ 
 document.getElementById("amount").value = ans;
+
 }
 
 /*
