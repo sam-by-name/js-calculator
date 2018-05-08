@@ -1,7 +1,7 @@
 let tempNum = '';                                    //  holds temp number
 let z = [];                                          //  holds string/numbers/ math operators in order
 let ans = 0;                                         //  Holds answer
-let y = [];                                          //  Holds numbers once they have been converted from strings
+//let y = [];                                          //  Holds numbers once they have been converted from strings
 
 ////////////// CALCULATOR BUTTONS BELOW ////////////////////
 
@@ -59,35 +59,61 @@ function percentageBtn (a) {                         // operator buttons functio
 
 function equals() {
   z.push(tempNum);                                                                  
-  y = z;
-  y = y.map(Number);
+  //y = z;
+  //y = y.map(Number);
 
-  if        (z[1] == '+') {ans = y[0] + y[2];} 
-    else if (z[1] == '×') {ans = y[0] * y[2];} 
-    else if (z[1] == '-') {ans = y[0] - y[2];} 
-    else if (z[1] == '÷') {ans = y[0] / y[2];}
-  if        (z[3] == '+') {ans = ans  + y[4];} 
-    else if (z[3] == '×') {ans = ans  * y[4];} 
-    else if (z[3] == '-') {ans = ans  - y[4];} 
-    else if (z[3] == '÷') {ans = ans  / y[4];}
-  if        (z[5] == '+') {ans = ans  + y[6];} 
-    else if (z[5] == '×') {ans = ans  * y[6];} 
-    else if (z[5] == '-') {ans = ans  - y[6];} 
-    else if (z[5] == '÷') {ans = ans  / y[6];}
-  if        (z[7] == '+') {ans = ans  + y[8];} 
-    else if (z[7] == '×') {ans = ans  * y[8];} 
-    else if (z[7] == '-') {ans = ans  - y[8];} 
-    else if (z[7] == '÷') {ans = ans  / y[8];}  
-  if        (z[9] == '+') {ans = ans  + y[10];} 
-    else if (z[9] == '×') {ans = ans  * y[10];} 
-    else if (z[9] == '-') {ans = ans  - y[10];} 
-    else if (z[9] == '÷') {ans = ans  / y[10];}
+  ans = Number(z[0]);
+  for (var i = 1; i < z.length; i++) {
+    let nextNum = Number(z[i+1])
+    let op = z[i];
+    
+    if (op === '+') { ans += nextNum; } 
+    else if (op === '-') { ans -= nextNum; } 
+    else if (op === '×') { ans *= nextNum; } 
+    else if (op === '÷') { ans /= nextNum; }
+    
+    i++;
+  }
+  //if        (z[1] == '+') {ans = y[0] + y[2];} 
+  //  else if (z[1] == '×') {ans = y[0] * y[2];} 
+  //  else if (z[1] == '-') {ans = y[0] - y[2];} 
+  //  else if (z[1] == '÷') {ans = y[0] / y[2];}
+  //if        (z[3] == '+') {ans = ans  + y[4];} 
+  //  else if (z[3] == '×') {ans = ans  * y[4];} 
+  //  else if (z[3] == '-') {ans = ans  - y[4];} 
+  //  else if (z[3] == '÷') {ans = ans  / y[4];}
+  //if        (z[5] == '+') {ans = ans  + y[6];} 
+  //  else if (z[5] == '×') {ans = ans  * y[6];} 
+  //  else if (z[5] == '-') {ans = ans  - y[6];} 
+  //  else if (z[5] == '÷') {ans = ans  / y[6];}
+  //if        (z[7] == '+') {ans = ans  + y[8];} 
+  //  else if (z[7] == '×') {ans = ans  * y[8];} 
+  //  else if (z[7] == '-') {ans = ans  - y[8];} 
+  //  else if (z[7] == '÷') {ans = ans  / y[8];}  
+  //if        (z[9] == '+') {ans = ans  + y[10];} 
+  //  else if (z[9] == '×') {ans = ans  * y[10];} 
+  //  else if (z[9] == '-') {ans = ans  - y[10];} 
+  //  else if (z[9] == '÷') {ans = ans  / y[10];}
  
 document.getElementById("amount").value = ans;
 z = [];
 tempNum = ans;
 }
 
+/*
+  let y = Number(z[0]);
+  for (var i = 1; i < z.length; i++) {
+    let nextNum = Number(z[i+1])
+    let op = entries[i];
+    
+    if (op === '+') { y += nextNum; } 
+    else if (op === '-') { y -= nextNum; } 
+    else if (op === '*') { y *= nextNum; } 
+    else if (op === '/') { y /= nextNum; }
+    
+    i++;
+  }*/
+  
 /*
 declare 3 variables
 initiate onclick button function.
