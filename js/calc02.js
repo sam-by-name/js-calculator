@@ -8,7 +8,6 @@ function reset() {                                   // AC button function
   tempNum = '';
   z = []; 
   ans = 0;
-  y = [];
 }
 
 ////////////// BACKSPACE BUTTON ////////////////////
@@ -53,7 +52,7 @@ function decimalBtn (a) {                            // operator buttons functio
 
 ////////////// PERCENTAGE BUTTON //////////////////////
 function percentageBtn (a) {                         // operator buttons function
-  tempNum = tempNum / 100;
+  tempNum = tempNum / 100 * z[z.length -2];
   document.getElementById('amount').value += a;
 }
 
